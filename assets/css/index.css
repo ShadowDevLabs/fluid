@@ -1,6 +1,7 @@
-*{
+* {
     font-family: 'Segoe UI', sans-serif;
 }
+
 .container {
     display: flex;
     flex-direction: column;
@@ -45,7 +46,7 @@
 }
 
 .tab-title {
-    font-family: 'Segoe UI', sans-serif;    
+    font-family: 'Segoe UI', sans-serif;
     color: #ffffff;
     font-size: 10px;
 }
@@ -57,7 +58,8 @@
 
 .bottom-bar {
     display: flex;
-    height: 38px;
+    height: auto;
+    padding: 5px 0;
     align-items: center;
     width: 100%;
     background-color: #26272e;
@@ -65,74 +67,89 @@
 
 .tab-controls {
     flex: 0 0 auto;
-    margin-right:10px;
-    margin-left:5px;
+    margin-right: 10px;
+    margin-left: 5px;
 }
 
-.tab-control{
-    background-color:transparent;
-    border:none;
+.tab-control {
+    background-color: transparent;
+    border: none;
 }
 
-.tab-control span{
+.tab-control span {
     font-size: 18px;
-    background:transparent;
-    color:white;
-    border:none;
+    background: transparent;
+    color: white;
+    border: none;
 }
 
-.navbar-content {
+
+.omni-box {
+    position: relative;
     display: flex;
-    height: 28px;
     align-items: center;
-    gap: 10px;
-    padding: 13px 18px;
-    background-color: #111315;
-    border-radius: 30px;
-    flex-grow: 1;
+    border-radius: 50px;
+    padding: 5px;
+    border: 1px solid #1c1d22;
+    width: 86vw;
+    background-color: #1c1d22;
+    box-sizing: border-box;
 }
 
-.navbar-group {
-    width: 7.33px;
-    height: 11px;
+.omni-box:focus-within {
+    border-color: #38393e;
 }
 
-.navbar-text {
-    display: inline-flex;
-    flex-direction: column;
+
+
+.lock-icon {
+    position: absolute;
+    left: 5px;
+    top: 50%;
+    padding: 5px;
+    border-radius: 50px;
+    background-color: #26272e;
+    color: white;
+    transform: translateY(-50%);
 }
 
-.navbar-title,
-.navbar-subtitle {
-    font-family: "Manrope", Helvetica;
-    font-size: 12px;
-    color: #ffffff;
+.omni-box span {
+    font-size: 16px;
 }
 
-.navbar-title {
-    font-weight: 600;
+#search-input {
+    padding-left: 40px;
+    border: none;
+    margin-right: 2.5%;
+    width: 97%;
+    background-color: transparent;
+    box-sizing: border-box;
+    outline: none;
+    color: white;
 }
 
-.navbar-subtitle {
-    font-weight: 500;
-    opacity: 0.7;
+#search-input::placeholder {
+    color: white;
 }
 
-.navbar-image {
-    width: 28px;
-    height: 28px;
+.person-icon {
+    width: 22px;
+    height: 22px;
+    margin-left: 10px;
+    border-radius: 50%;
     object-fit: cover;
 }
 
-.navbar-menu {
+.menu-btn {
     display: inline-flex;
     flex-direction: column;
     align-items: center;
     justify-content: space-between;
     height: 15px;
+    margin-left:15px;
 }
 
-.navbar-menu-dot {
+.menu-dot {
     width: 3px;
     height: 3px;
     background-color: #e3e4e6;
