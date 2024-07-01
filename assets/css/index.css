@@ -1,0 +1,152 @@
+*{
+    font-family: 'Segoe UI', sans-serif;
+}
+.container {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    align-items: flex-start;
+    position: relative;
+    background-color: #111315;
+}
+
+.tabs-container {
+    display: flex;
+    flex-wrap: nowrap;
+    padding-top: 5px;
+    overflow-x: auto;
+    width: 100%;
+}
+
+.tab {
+    flex: 1 1 auto;
+    display: flex;
+    max-width: 200px;
+    align-items: center;
+    justify-content: space-between;
+    padding: 7px 12px;
+    border-radius: 8px 8px 0 0;
+    background-color: #26272e;
+    margin-right: 2px;
+}
+
+.tab.active {
+    background-color: #111315;
+}
+
+.tab-content {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.tab-icon {
+    width: 17px;
+}
+
+.tab-title {
+    font-family: 'Segoe UI', sans-serif;    
+    color: #ffffff;
+    font-size: 10px;
+}
+
+.tab-close {
+    width: 12px;
+    height: 12px;
+}
+
+.bottom-bar {
+    display: flex;
+    height: 38px;
+    align-items: center;
+    width: 100%;
+    background-color: #26272e;
+}
+
+.tab-controls {
+    flex: 0 0 auto;
+    margin-right:10px;
+    margin-left:5px;
+}
+
+.tab-control{
+    background-color:transparent;
+    border:none;
+}
+
+.tab-control span{
+    font-size: 18px;
+    background:transparent;
+    color:white;
+    border:none;
+}
+
+.navbar-content {
+    display: flex;
+    height: 28px;
+    align-items: center;
+    gap: 10px;
+    padding: 13px 18px;
+    background-color: #111315;
+    border-radius: 30px;
+    flex-grow: 1;
+}
+
+.navbar-group {
+    width: 7.33px;
+    height: 11px;
+}
+
+.navbar-text {
+    display: inline-flex;
+    flex-direction: column;
+}
+
+.navbar-title,
+.navbar-subtitle {
+    font-family: "Manrope", Helvetica;
+    font-size: 12px;
+    color: #ffffff;
+}
+
+.navbar-title {
+    font-weight: 600;
+}
+
+.navbar-subtitle {
+    font-weight: 500;
+    opacity: 0.7;
+}
+
+.navbar-image {
+    width: 28px;
+    height: 28px;
+    object-fit: cover;
+}
+
+.navbar-menu {
+    display: inline-flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    height: 15px;
+}
+
+.navbar-menu-dot {
+    width: 3px;
+    height: 3px;
+    background-color: #e3e4e6;
+    border-radius: 50%;
+}
+
+@media (max-width: 768px) {
+    .tab {
+        flex: 1 1 100%;
+        justify-content: space-between;
+    }
+
+    .navbar-content {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+}
