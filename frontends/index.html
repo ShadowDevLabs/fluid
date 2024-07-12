@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Fluid - new proxy developed for the 2024 proxython">
+    <meta name="keywords" content="proxy, bypass, fluid, proxython, ultraviolet, uv">
+    <meta name="author" content="Made by NC & Peak">
+    <title>Fluid</title>
+    <link href="assets/css/index.css" rel="stylesheet" type="text/css">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,500,1,0" />
+
+</head>
+
+<body>
+    <div class="tabs">
+        <div class="tab">
+            <div class="tab-content">
+                <img src="https://t2.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https://google.com&size=32"
+                    class="tab-favicon">
+                <span class="tab-name">Google</span>
+            </div>
+            <img class="tab-close" src="/assets/imgs/close.png">
+        </div>
+        <img class="tab-add" src="/assets/imgs/add.png" right-click-custom="true" id="tab-add">
+    </div>
+    <div class="bottom-bar">
+        <div class="tab-controls">
+            <button class="tab-control"><span class="material-symbols-outlined">arrow_back</span></button>
+            <button class="tab-control"><span class="material-symbols-outlined">arrow_forward</span></button>
+            <button class="tab-control"><span class="material-symbols-outlined">refresh</span></button>
+        </div>
+        <form class="omni-box">
+            <span class="material-symbols-outlined lock-icon">search</span>
+            <input id="search-input" placeholder="Search Google or type a URL">
+        </form>
+
+        <div class="menu-btn">
+            <div class="menu-dot"></div>
+            <div class="menu-dot"></div>
+            <div class="menu-dot"></div>
+        </div>
+    </div>
+    <div class="tabs-iframe">
+        <iframe src="/new.html"></iframe>
+    </div>
+
+    <!-- Custom Right Click Menus -->
+        <!-- Tab Add Right Click -->
+        <div class="context-menu" id="tab-add-context-menu">
+            <div class="context-menu__item">Launch Discord</div>
+            <div class="context-menu__item">Open Settings</div>
+            <div class="context-menu__item">Open Github</div>
+        </div>
+    <script src="/assets/js/menu.js"></script>
+</body>
+</html>
