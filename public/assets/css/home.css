@@ -1,0 +1,111 @@
+:root {
+    --primary: #000305;
+    --secondary: #081121;
+    --text: #E0E1DD;
+    --secondary-text: #a7c9ed;
+    --accent: #4c9df4;
+}
+
+body {
+    background-color: var(--primary);
+    color: var(--text);
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height:80vh;
+    text-align: center;
+}
+
+
+h1 {
+    color: var(--accent);
+    font-size:60px;
+    margin-bottom:0px;
+}
+
+p{
+    margin: 5px 0;
+    cursor:pointer;
+}
+
+p:hover{
+    color:var(--secondary-text)
+}
+
+a {
+    color: var(--accent);
+    font-weight:bold;
+    margin-top:10px;
+    text-decoration: none;
+}
+
+.features {
+    display: flex;
+    gap: 20px;
+}
+
+.feature {
+    background-color: var(--secondary);
+    color: var(--secondary-text);
+    margin: 10px 0;
+    margin-bottom:10px;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor:pointer;
+    width: fit-content;
+    position:relative;
+}
+
+.feature:hover::after {
+    content: attr(data-description);
+    position: absolute;
+    bottom: -25px;
+    left: 50%;
+    z-index:1;
+    border: 1px solid var(--accent);
+    transform: translateX(-50%);
+    background-color: var(--secondary);
+    color: var(--secondary-text);
+    padding: 5px 10px;
+    border-radius: 5px;
+    white-space: nowrap;
+    font-size: 13px;
+}
+
+.icons {
+    display: flex;
+    gap: 20px;
+    margin-top: 15px;
+    align-items: center;
+}
+
+.icons span {
+    color: var(--secondary-text);
+    display: flex;
+    padding: 10px;
+    border-radius: 5px;
+    align-items: center;
+    gap: 8px;
+    background-color: var(--secondary);
+    font-size: 16px;
+    transition: transform 0.2s ease-in-out;
+    min-width: 220px;
+    min-height:20px;
+    cursor:pointer;
+    justify-content: center; 
+}
+
+.icons i {
+    color: var(--primary-color);
+    transition: transform 0.2s ease-in-out;
+}
+
+.icons span:hover{
+    background-color: var(--primary);
+    padding:9px;
+    border: 1px solid var(--accent)
+}

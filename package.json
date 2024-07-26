@@ -9,11 +9,12 @@
   "author": "NC & Peak",
   "type": "module",
   "dependencies": {
+    "@mercuryworkshop/bare-mux": "^2.0.4",
     "@tomphttp/bare-server-node": "^2.0.3",
     "compress": "^0.99.0",
     "compression": "^1.7.4",
     "express": "^4.19.2",
-    "wisp": "^0.13.0",
+    "wisp": "^0.10.0",
     "wisp-server-node": "^1.1.0"
   }
 }

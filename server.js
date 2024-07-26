@@ -2,19 +2,23 @@ import compression from "compression";
 import express from "express";
 import wisp from "wisp-server-node";
 import { createBareServer } from '@tomphttp/bare-server-node';
+import { baremuxPath } from "@mercuryworkshop/bare-mux/node";
 import { createServer } from "http";
 import { fileURLToPath } from "url";
 import { join } from "path";
 const version = process.env.npm_package_version
 const publicPath = fileURLToPath(new URL("./public/", import.meta.url));
-const browsers = fileURLToPath(new URL("./frontends", import.meta.url))
 let port = 8080;
 const app = express();
 const server = createServer();
-const bare = createBareServer("/bare/")
+const bare = createBareServer("/bare/");
 app.use(compression());
-app.use(express.static(publicPath, { maxAge: 604800000 })); //1 week
-app.use("/", express.static(browsers))
+app.use(express.static(publicPath, { 
+  extensions: ['html'],
+  maxAge: 604800000 
+})); 
+app.use("/baremux/", express.static(baremuxPath));
+
 app.use("/privacy", express.static(publicPath + '/privacy.html'));
 
 app.get("/version", (req, res) => {
