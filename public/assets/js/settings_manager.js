@@ -39,7 +39,7 @@ export class SettingsManager {
         const request = store.put(value, key);
         request.onsuccess = () => {
           resolve();
-          const event = new CustomEvent("settingsupdate", {
+          const event = new CustomEvent("settings", {
             detail: {
               key: key,
               value: value,
