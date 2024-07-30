@@ -1,6 +1,8 @@
 import { SettingsManager } from "/assets/js/settings_manager.js";
 
 window.settings = new SettingsManager();
+
+
 export default function changeTheme() {
   const selectedTheme = document.getElementById("themeSelector").value;
   settings.set("theme", selectedTheme);
