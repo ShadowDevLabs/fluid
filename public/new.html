@@ -41,7 +41,7 @@
         <p class="search-icon">
           <span class="material-symbols-outlined lock-icon">search</span>
         </p>
-        <form id="uv-form" class="search-form" onsubmit="parent.Tabs.load(document.getElementById('uv-form').value)">
+        <form id="uv-form" class="search-form" onsubmit="">
           <input
             type="text"
             id="uv-address"
@@ -74,6 +74,13 @@
         </a>
       </div>
     </div>
+
+    <script>
+      documetn.getElementById('uv-form').onsubmit = (e) => {
+        e.preventDefault();
+        parent.Tabs.load(document.getElementById('uv-form').value)
+      }
+    </script>
 <!--
     <div id="shortcut-modal" class="modal" style="display:none;">
       <span class="close">&times;</span>
