@@ -118,14 +118,24 @@
             console.log("Received tab info:", title, favicon);
             document.title = title;
             document.getElementById("icon").href=favicon;
-            // Optionally, you could remove any previous favicon links if needed
         }
     });
+
+    window.onload = () => {
+        const tabInfo = settings.get("tab-info");
+        if (tabInfo) {
+            const { title, favicon } = tabInfo;
+            document.title = title;
+            document.getElementById("icon").href = favicon;
+        }
+    };
 
     function openMenu() {
       let shown = document.getElementById("options-menu").display;
       document.getElementById("options-menu").display = shown === "block" ? "none" : "block"
     }
+
+
   </script>
 </body>
 
