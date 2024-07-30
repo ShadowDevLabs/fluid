@@ -7,8 +7,12 @@ const saveCloak = async () => {
     try {
         const response = await fetch(`/get-title?url=${encodeURIComponent(url)}`);
         const data = await response.json();
-        settings.set("tab-title", data.title);
-        settings.set("tab-favicon", `https://t0.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=${url}&size=128`)
+        const tabInfo = {
+            title: data.title,
+            favicon: `https://t0.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=${url}&size=128`
+        };
+        settings.set("tab-info", tabInfo);
+        window.parent.postMessage({ key: "tabInfo", value: tabInfo }, "*");
     } catch {
     }
 };

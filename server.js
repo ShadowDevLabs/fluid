@@ -50,7 +50,7 @@ app.get("/search-api", async (req, res) => {
 
 
 app.get("/get-title", async (req, res) => {
-  const {url } = req.query;
+  const { url } = req.query;
   try {
     const response = await fetch(url);
     const html = await response.text();
