@@ -6,14 +6,6 @@
   --accent: #4c9df4;
 }
 
-:root.blurple {
-  --primary: yellow;
-  --secondary: yellow;
-  --text: white;
-  --secondary-text: #a7c9ed;
-  --accent: #4c9df4;
-}
-
 * {
   font-family: "Poppins", sans-serif;
 }

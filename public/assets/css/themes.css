@@ -1,0 +1,15 @@
+:root {
+    --primary: #000305;
+    --secondary: #081121;
+    --text: #e0e1dd;
+    --secondary-text: #a7c9ed;
+    --accent: #4c9df4;
+}
+
+:root.blurple {
+    --primary: #ffffff;
+    --secondary: #ecf3ff;
+    --text: #e0e1dd;
+    --secondary-text: #a7c9ed;
+    --accent: #4c9df4;
+}

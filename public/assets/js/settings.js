@@ -1,9 +1,13 @@
 import { SettingsManager } from "/assets/js/settings_manager.js";
 
 window.settings = new SettingsManager();
-export default function changeTheme() {
+
+function changeTheme() {
   const selectedTheme = document.getElementById("themeSelector").value;
+  _changeTheme(selectedTheme);
   settings.set("theme", selectedTheme);
+  const event = new CustomEvent("settings", { detail: { key: "theme" } });
+  window.dispatchEvent(event);
 }
 
 function _changeTheme(theme) {
@@ -13,9 +17,10 @@ function _changeTheme(theme) {
 
 window.addEventListener("settings", async function (e) {
   if (e.key === "theme") {
+    console.log("Got Signal");
     const newTheme = await settings.get("theme");
     if (newTheme) {
-        _changeTheme(newTheme);
+      _changeTheme(newTheme);
     }
   }
 });
@@ -24,8 +29,9 @@ document.addEventListener("DOMContentLoaded", async () => {
   const theme = await settings.get("theme");
   if (theme) {
     _changeTheme(theme);
-    try {
-      document.getElementById("themeSelector").value = theme;
-    } catch (e) {}
+  }
+
+  if (window.location.pathname.endsWith("settings.html")) {
+      document.getElementById("themeSelector").addEventListener("change", changeTheme);
   }
 });
