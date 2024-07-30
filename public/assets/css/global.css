@@ -2,7 +2,6 @@
   display: none;
 }
 
-
 .loading {
   text-align: center;
   align-content: center;
@@ -27,8 +26,8 @@
   margin-bottom: 1rem;
 }
 
-#loading-tip{
-  font-size:1rem;
+#loading-tip {
+  font-size: 1rem;
 }
 
 .loading-bar {
@@ -44,6 +43,6 @@
   animation: loadingAnimation 1.5s infinite ease-in-out;
 }
 
-.loading-cell.loaded{
+.loading-cell.loaded {
   background-color: var(--accent);
 }

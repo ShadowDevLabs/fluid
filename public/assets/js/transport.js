@@ -1,4 +1,5 @@
-const connection = new BareMux.BareMuxConnection("/baremux/worker.js");
+import { BareMuxConnection } from "/baremux/index.mjs"
+const connection = new BareMuxConnection("/baremux/worker.js")
 
 export default async function setTransport(transport, url) {
   url = url || `wss://${location.origin}/wisp/`;

@@ -1,15 +1,16 @@
 import { SettingsManager } from "/assets/js/settings_manager.js";
 
 window.settings = new SettingsManager();
-export default function changeTheme() {
-  const selectedTheme = document.getElementById("themeSelector").value;
+window.changeTheme = (theme) => {
+  const selectedTheme = theme || document.getElementById("themeSelector").value;
   settings.set("theme", selectedTheme);
-}
+  return `Set theme to ${selectedTheme}`
+};
 
-function _changeTheme(theme) {
+window._changeTheme = (theme) => {
   const root = document.documentElement;
   root.className = theme;
-}
+};
 
 window.addEventListener("settings", async function (e) {
   if (e.key === "theme") {
@@ -28,4 +29,5 @@ document.addEventListener("DOMContentLoaded", async () => {
       document.getElementById("themeSelector").value = theme;
     } catch (e) {}
   }
+
 });

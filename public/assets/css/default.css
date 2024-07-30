@@ -32,13 +32,13 @@ body {
   padding: 10px;
   border-radius: 3px;
   width: 150px;
-  margin-right:10px;
+  margin-right: 10px;
 }
 
-.tab.active{
+.tab.active {
   border: 1px solid var(--accent);
   border-radius: 5px;
-} 
+}
 
 .tab-content {
   display: flex;

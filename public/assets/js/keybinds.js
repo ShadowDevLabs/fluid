@@ -3,7 +3,7 @@ function fakeKeybind(key) {
 } //Testing purposes
 
 document.addEventListener("keypress", (e) => {
-  console.log(`Triggering keybind for \"${e.key}\" with alt key ${e.ctrlKey}`);
+  // console.log(`Triggering keybind for \"${e.key}\" with alt key ${e.ctrlKey}`);
   if (e.ctrlKey && e.shiftKey) {
     switch (e.key) {
       case "t":

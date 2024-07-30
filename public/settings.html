@@ -1,91 +1,81 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta
-      name="description"
-      content="Fluid - new proxy developed for the 2024 proxython"
-    />
-    <meta
-      name="keywords"
-      content="proxy, bypass, fluid, proxython, ultraviolet, uv"
-    />
-    <meta name="author" content="Made by NC & Peak" />
-    <title>Fluid</title>
-    <link href="../assets/css/settings.css" rel="stylesheet" type="text/css" />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
-      rel="stylesheet"
-    />
-    <link
-      rel="stylesheet"
-      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,500,1,0"
-    />
 
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
-      integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
-      crossorigin="anonymous"
-      referrerpolicy="no-referrer"
-    />
-  </head>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Fluid - new proxy developed for the 2024 proxython" />
+  <meta name="keywords" content="proxy, bypass, fluid, proxython, ultraviolet, uv" />
+  <meta name="author" content="Made by NC & Peak" />
+  <title>Fluid</title>
+  <link href="../assets/css/settings.css" rel="stylesheet" type="text/css" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+    rel="stylesheet" />
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,500,1,0" />
 
-  <body>
-    <div class="settings">
-      <h1>Settings</h1>
-      <div class="settings-container">
-        <div class="setting">
-          <h2>Tab Cloak</h2>
-          <p>Cloak Fluid into any other website by entering the url</p>
-          <input type="text" id="cloak-url" />
-          <div class="buttons">
-            <button class="button">Save</button>
-            <button class="button">Reset</button>
-          </div>
-        </div>
-        <div class="setting">
-          <h2>About:Blank</h2>
-          <p>Site will launch in an About:Blank on load.</p>
-          <label class="switch">
-            <input type="checkbox" id="abtBlank" />
-            <span class="slider"></span>
-          </label>
-        </div>
-        <div class="setting">
-          <h2>Panic Key</h2>
-          <p>Assign a key press to redirect the page to a chosen site.</p>
-          <div class="inputs">
-            <input type="text" id="panic-key" />
-            <input type="url" id="panic-url" />
-          </div>
-          <div class="buttons">
-            <button class="button">Save</button>
-            <button class="button">Reset</button>
-          </div>
-        </div>
-        <div class="setting">
-          <h2>Panic Key</h2>
-          <p>Assign a key press to redirect the page to a chosen site.</p>
-          <div class="inputs">
-            <input type="text" id="panic-key" />
-            <input type="url" id="panic-url" />
-          </div>
-          <div class="buttons">
-            <button class="button">Save</button>
-            <button class="button">Reset</button>
-          </div> 
-        </div>
-        <div class="setting">
-          <h2>Themes</h2>
-          <p>Customize & Choose the color scheme of the site.</p>
-          <select id="themeSelector" onchange="changeTheme()" class="select-menu">
-            <option value="">Fluid (Dark)</option>
-            <option value="blurple">Blurple</option>
-          </select> 
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <script src="assets/js/settings.js" type="module"></script>
+</head>
+
+<body>
+  <div class="settings">
+    <h1>Settings</h1>
+    <div class="settings-container">
+      <div class="setting">
+        <h2>Tab Cloak</h2>
+        <p>Cloak Fluid into any other website by entering the url</p>
+        <input type="text" id="cloak-url" />
+        <div class="buttons">
+          <button class="button">Save</button>
+          <button class="button">Reset</button>
         </div>
       </div>
+      <div class="setting">
+        <h2>About:Blank</h2>
+        <p>Site will launch in an About:Blank on load.</p>
+        <label class="switch">
+          <input type="checkbox" id="abtBlank" />
+          <span class="slider"></span>
+        </label>
+      </div>
+      <div class="setting">
+        <h2>Panic Key</h2>
+        <p>Assign a key press to redirect the page to a chosen site.</p>
+        <div class="inputs">
+          <input type="text" id="panic-key" />
+          <input type="url" id="panic-url" />
+        </div>
+        <div class="buttons">
+          <button class="button">Save</button>
+          <button class="button">Reset</button>
+        </div>
+      </div>
+      <div class="setting">
+        <h2>Panic Key</h2>
+        <p>Assign a key press to redirect the page to a chosen site.</p>
+        <div class="inputs">
+          <input type="text" id="panic-key" />
+          <input type="url" id="panic-url" />
+        </div>
+        <div class="buttons">
+          <button class="button">Save</button>
+          <button class="button">Reset</button>
+        </div>
+      </div>
+      <div class="setting">
+        <h2>Themes</h2>
+        <p>Customize & Choose the color scheme of the site.</p>
+        <select id="themeSelector" onchange="changeTheme()" class="select-menu">
+          <option value="">Fluid (Dark)</option>
+          <option value="blurple">Blurple</option>
+        </select>
+      </div>
     </div>
-  </body>
+  </div>
+</body>
+
 </html>

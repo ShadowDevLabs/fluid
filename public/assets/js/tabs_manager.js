@@ -53,6 +53,10 @@ export class TabTracker {
       disabledFeatures: [], //Disable features listed in features.md
     };
     this.config = { ...defaultConfig, ...config };
+    this.proxyPrefix = {
+      uv: "uv",
+      scramjet: "scram",
+    };
     if (this.config.debug) {
       if (this.config.debug)
         console.log("Starting Tab Tracker with debug mode ON");
@@ -85,7 +89,7 @@ export class TabTracker {
       setTransport(this.config.transport, this.config.wispUrl);
       if ("serviceWorker" in navigator) {
         navigator.serviceWorker
-          .register("/sw.js", { scope: this.config.swPrefix })
+          .register("/sw.js", { scope: `/${this.config.swPrefix}/` })
           .then(
             (registration) => {
               console.log(
@@ -238,20 +242,20 @@ export class TabTracker {
     } else {
       try {
         // Attempt to encode the URL as-is
-        return `/${this.config.swPrefix}/${this.encode(
-          new URL(url).toString()
-        )}`;
+        return `/${this.config.swPrefix}/${
+          this.proxyPrefix[this.config.proxy]
+        }/${this.encode(new URL(url).toString())}`;
       } catch (e) {
         // If the above fails, try with "https://" prefix
         try {
-          return `/${this.config.swPrefix}/${this.encode(
-            new URL(url, "https://").toString()
-          )}`;
+          return `/${this.config.swPrefix}/${
+            this.proxyPrefix[this.config.proxy]
+          }/${this.encode(new URL(url, "https://").toString())}`;
         } catch (e) {
           // If both above fail, fall back to the search engine template
-          return `/${this.config.swPrefix}/${this.encode(
-            this.config.searchTemplate.replace("%q%", query)
-          )}`;
+          return `/${this.config.swPrefix}/${
+            this.proxyPrefix[this.config.proxy]
+          }/${this.encode(this.config.searchTemplate.replace("%q%", query))}`;
         }
       }
     }
@@ -291,7 +295,7 @@ export class TabTracker {
         return __uv$config.encodeUrl(string);
         break;
       case "scramjet":
-        return __scramjet$config.encodeUrl(string);
+        return __scramjet$config.codec.encode(string);
         break;
       default:
         break;
@@ -305,7 +309,7 @@ export class TabTracker {
         return __uv$config.decodeUrl(string);
         break;
       case "scramjet":
-        return __scramjet$config.decodeUrl(string);
+        return __scramjet$config.codec.decode(string);
         break;
       default:
         break;

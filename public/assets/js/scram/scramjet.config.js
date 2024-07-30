@@ -1,5 +1,5 @@
 self.__scramjet$config = {
-  prefix: "/~/scramjet/",
+  prefix: "/~/scram/",
   codec: self.__scramjet$codecs.xor,
   config: "/assets/js/scram/scramjet.config.js",
   bundle: "/assets/js/scram/scramjet.bundle.js",
