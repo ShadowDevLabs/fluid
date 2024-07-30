@@ -1,42 +1,76 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Fluid - new proxy developed for the 2024 proxython">
-    <meta name="keywords" content="proxy, bypass, fluid, proxython, ultraviolet, uv">
-    <meta name="author" content="Made by NC & Peak">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Fluid - new proxy developed for the 2024 proxython"
+    />
+    <meta
+      name="keywords"
+      content="proxy, bypass, fluid, proxython, ultraviolet, uv"
+    />
+    <meta name="author" content="Made by NC & Peak" />
     <title>Fluid</title>
-    <link href="/assets/css/new.css" rel="stylesheet" type="text/css">
+    <link href="/assets/css/new.css" rel="stylesheet" type="text/css" />
     <link
-        href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
-        rel="stylesheet">
-    <link rel="stylesheet"
-        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,500,1,0" />
+      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,500,1,0"
+    />
 
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
-        integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
-        crossorigin="anonymous" referrerpolicy="no-referrer" />
-</head>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+      integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+  </head>
 
-<body>
+  <body>
     <div class="container">
-        <h1>Fluid</h1>
-        <div class="search-container">
-            <p class="search-icon"><span class="material-symbols-outlined lock-icon">search</span></p>
-            <form id="uv-form" class="search-form">
-                <input type="text" id="uv-address" placeholder="Search or enter a URL">
-                <input id="uv-search-engine" value="https://www.google.com/search?q=%s" type="hidden" />
-            </form>
-        </div>
-        <div class="shortcuts">
-            <a class="shortcut add">
-                <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0, 0, 400,400"><g id="svgg"><path d="M143.037 41.161 C 3.999 92.696,-5.971 287.174,127.083 352.339 C 186.443 381.411,271.324 366.663,318.993 318.993 C 443.452 194.535,307.671 -19.861,143.037 41.161 M257.465 82.787 C 336.577 123.604,353.905 229.429,291.667 291.667 C 213.477 369.857,78.892 320.123,71.796 210.417 C 65.246 109.134,169.555 37.431,257.465 82.787 M183.333 158.333 L 183.333 183.333 158.333 183.333 L 133.333 183.333 133.333 200.000 L 133.333 216.667 158.333 216.667 L 183.333 216.667 183.333 241.667 L 183.333 266.667 200.000 266.667 L 216.667 266.667 216.667 241.667 L 216.667 216.667 241.667 216.667 L 266.667 216.667 266.667 200.000 L 266.667 183.333 241.667 183.333 L 216.667 183.333 216.667 158.333 L 216.667 133.333 200.000 133.333 L 183.333 133.333 183.333 158.333 " stroke="none" fill="#FFFFFF" fill-rule="evenodd"/></g></svg>
-                <p>Add shortcut</p>
-            </a>
-        </div>
+      <h1>Fluid</h1>
+      <div class="search-container">
+        <p class="search-icon">
+          <span class="material-symbols-outlined lock-icon">search</span>
+        </p>
+        <form id="uv-form" class="search-form">
+          <input
+            type="text"
+            id="uv-address"
+            placeholder="Search or enter a URL"
+          />
+          <input
+            id="uv-search-engine"
+            value="https://www.google.com/search?q=%s"
+            type="hidden"
+          />
+        </form>
+      </div>
+      <div class="shortcuts">
+        <a class="shortcut add">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            xmlns:xlink="http://www.w3.org/1999/xlink"
+            viewBox="0, 0, 400,400"
+          >
+            <g id="svgg">
+              <path
+                d="M143.037 41.161 C 3.999 92.696,-5.971 287.174,127.083 352.339 C 186.443 381.411,271.324 366.663,318.993 318.993 C 443.452 194.535,307.671 -19.861,143.037 41.161 M257.465 82.787 C 336.577 123.604,353.905 229.429,291.667 291.667 C 213.477 369.857,78.892 320.123,71.796 210.417 C 65.246 109.134,169.555 37.431,257.465 82.787 M183.333 158.333 L 183.333 183.333 158.333 183.333 L 133.333 183.333 133.333 200.000 L 133.333 216.667 158.333 216.667 L 183.333 216.667 183.333 241.667 L 183.333 266.667 200.000 266.667 L 216.667 266.667 216.667 241.667 L 216.667 216.667 241.667 216.667 L 266.667 216.667 266.667 200.000 L 266.667 183.333 241.667 183.333 L 216.667 183.333 216.667 158.333 L 216.667 133.333 200.000 133.333 L 183.333 133.333 183.333 158.333 "
+                stroke="none"
+                fill="#FFFFFF"
+                fill-rule="evenodd"
+              />
+            </g>
+          </svg>
+          <p>Add shortcut</p>
+        </a>
+      </div>
     </div>
-</body>
-
+  </body>
 </html>

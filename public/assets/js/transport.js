@@ -1,16 +1,17 @@
-import { SetTransport } from "/baremux/index.js";
+const connection = new BareMux.BareMuxConnection("/baremux/worker.js");
 
-export function setTransport(transport, url) {
-    url = url || `wss://${location.origin}`
-    switch(transport) {
-        case "libcurl":
-            SetTransport("CurlMod.LibcurlClient", { wisp: url}); 
-            break;
-        case "epoxy":
-            SetTransport("EpxMod.EpoxyClient", { wisp: url});
-            break;
-        default:
-            SetTransport(transport, { wisp: url });
-            break;
-    }
+export default async function setTransport(transport, url) {
+  url = url || `wss://${location.origin}/wisp/`;
+  switch (transport) {
+    case "libcurl":
+      await connection.setTransport("/libcurl/index.mjs", [{ wisp: url }]);
+      break;
+    case "epoxy":
+      console.log(connection);
+      await connection.setTransport("/epoxy/index.mjs", [{ wisp: url }]);
+      break;
+    default:
+      await connection.setTransport(transport, [{ wisp: url }]);
+      break;
+  }
 }
