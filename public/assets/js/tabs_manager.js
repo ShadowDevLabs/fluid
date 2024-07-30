@@ -85,28 +85,28 @@ export class TabTracker {
         else this.load(omnibox.value);
       }
     };
-    try {
-      setTransport(this.config.transport, this.config.wispUrl);
-      if ("serviceWorker" in navigator) {
-        navigator.serviceWorker
-          .register("/sw.js", { scope: `/${this.config.swPrefix}/` })
-          .then(
-            (registration) => {
-              console.log(
-                "Service worker registration succeeded:",
-                registration
-              );
-            },
-            (error) => {
-              console.error(`Service worker registration failed: ${error}`);
-            }
-          );
-      } else {
-        console.error("Service workers are not supported.");
-      }
-    } catch (e) {
-      console.error(`Issue registering service worker: ${e}`);
-    }
+    // try {
+    //   setTransport(this.config.transport, this.config.wispUrl);
+    //   if ("serviceWorker" in navigator) {
+    //     navigator.serviceWorker
+    //       .register("/sw.js", { scope: `/${this.config.swPrefix}/` })
+    //       .then(
+    //         (registration) => {
+    //           console.log(
+    //             "Service worker registration succeeded:",
+    //             registration
+    //           );
+    //         },
+    //         (error) => {
+    //           console.error(`Service worker registration failed: ${error}`);
+    //         }
+    //       );
+    //   } else {
+    //     console.error("Service workers are not supported.");
+    //   }
+    // } catch (e) {
+    //   console.error(`Issue registering service worker: ${e}`);
+    // }
 
     this.loaded = true;
   }

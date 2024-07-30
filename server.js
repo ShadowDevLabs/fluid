@@ -48,6 +48,19 @@ app.get("/search-api", async (req, res) => {
   res.send(response);
 });
 
+
+app.get("/get-title", async (req, res) => {
+  const {url } = req.query;
+  try {
+    const response = await fetch(url);
+    const html = await response.text();
+    const title = html.match(/<title>(.*?)<\/title>/i)?.[1] || "Title not found";
+    res.send({ title });
+  } catch {
+    res.status(500).send("Error fetching the URL");
+  }
+});
+
 app.get("/user-agents", async (req, res) => {
   let text = await fetch("https://useragents.me/");
   text = await text.text();

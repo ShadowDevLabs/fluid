@@ -2,8 +2,9 @@
 <html lang="en">
   <head>
     <script type="module" src="/assets/js/settings_manager.js"></script>
+    <script type="module" src="/assets/js/settings.js"></script>
     <script type="module" src="/assets/js/themes.js"></script>
-    <script src="/assets/js/loader.js"></script>
+    <script type="module" src="/assets/js/loader.js"></script>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta
@@ -25,11 +26,12 @@
     <link href="/assets/css/global.css" rel="stylesheet" type="text/css" />
     <link href="assets/css/themes.css" rel="stylesheet" type="text/css" />
     <link href="/favicon.ico" rel="icon"/>
-    <script src="/assets/js/uv/uv.bundle.js" defer></script>
+    <!-- <script src="/assets/js/uv/uv.bundle.js" defer></script>
     <script src="/assets/js/uv/uv.config.js" defer></script>
     <script src="/assets/js/scram/scramjet.codecs.js"></script>
     <script src="/assets/js/scram/scramjet.bundle.js" defer></script>
-    <script src="/assets/js/scram/scramjet.config.js" defer></script>
+    <script src="/assets/js/scram/scramjet.config.js" defer></script> -->
+    <script src="/chemical.js"></script>
     <script type="module" src="/assets/js/tabs_manager.js" defer></script>
     <script type="module" src="/assets/js/tabs.js" defer></script>
     <script src="/assets/js/keybinds.js" defer></script>
@@ -44,7 +46,7 @@
   </head>
 
   <body>
-    <div class="loading" id="loading-page">
+    <div class="loading" id="loading-page" >
       <span>Fluid is loading...</span>
       <div class="loading-bar" id="initial-loading-bar">
         <div class="loading-cell loaded"></div>

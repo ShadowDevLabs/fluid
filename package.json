@@ -16,6 +16,7 @@
     "@mercuryworkshop/scramjet": "^1.0.2",
     "@titaniumnetwork-dev/ultraviolet": "^3.2.6",
     "@tomphttp/bare-server-node": "^2.0.3",
+    "chemicaljs": "^1.6.2",
     "compress": "^0.99.0",
     "compression": "^1.7.4",
     "express": "^4.19.2",

@@ -26,7 +26,7 @@ const config = {
   disabledFeatures: [], //Disable features listed in features.md
 };
 
-document.addEventListener("DOMContentLoaded", () => {
+export function initTabs() {
   console.log("Initiating tab manager");
   try {
     window.Tabs = new TabTracker(config);
@@ -40,4 +40,4 @@ document.addEventListener("DOMContentLoaded", () => {
   } catch (e) {
     console.error(e);
   }
-});
+}

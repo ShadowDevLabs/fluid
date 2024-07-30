@@ -6,10 +6,43 @@
     --accent: #4c9df4;
 }
 
-:root.blurple {
-    --primary: #ffffff;
-    --secondary: #ecf3ff;
-    --text: #e0e1dd;
-    --secondary-text: #a7c9ed;
-    --accent: #4c9df4;
+:root.shadow {
+    --primary: #060611;       
+    --secondary: #0e0e1d;      
+    --text: #ffffff;            
+    --secondary-text: #ba7df2;  
+    --accent: #ba7df2;          
+}
+
+:root.midnight {
+    --primary: #181a1b;
+    --secondary: #282c34;
+    --text: #dcdcdc;
+    --secondary-text: #888888;
+    --accent: #61dafb;
+}
+
+
+:root.orangeflame {
+    --primary: #4a2c2c;
+    --secondary: #d8743e;
+    --text: #ffffff;
+    --secondary-text: #ffe0b2;
+    --accent: #ffab91;
+}
+
+:root.ocean {
+    --primary: #011431;
+    --secondary: #011223;
+    --text: #abd6f4;
+    --secondary-text: #59c0f4;
+    --accent: #078ae2;
+}
+
+:root.pastel {
+    --primary: #282a36;
+    --secondary: #44475a;
+    --text: #f8f8f2;
+    --secondary-text: #6272a4;
+    --accent: #ff79c6;
 }

@@ -1,3 +1,5 @@
+import { initTabs } from "/assets/js/tabs.js";
+
 let tips = [
   "Snails have teeth.",
   "You would need to lick a stamp roughly 25,000 times to reach your daily calorie intake.",
@@ -20,15 +22,16 @@ let tips = [
   "The world's largest desert is Antarctica.",
   "Humans share 50% of their DNA with bananas.",
   "Cheetahs can accelerate from 0 to 60 mph in just a few seconds.",
-  "Some species of turtles can breathe through their butts."
+  "Some species of turtles can breathe through their butts.",
 ];
 
-
-let percent = 0; 
 const interval = setInterval(update, 250);
-const tip = tips[Math.floor(Math.random() * 12)]; 
+const tip = tips[Math.floor(Math.random() * 12)];
 
-window.onload = () => setTimeout(stopLoad, 500);
+window.onload = () => {
+  setTimeout(stopLoad, 500);
+  initTabs();
+};
 
 function stopLoad() {
   Array.from(document.getElementById("initial-loading-bar").children).forEach(
@@ -50,12 +53,11 @@ function update() {
 function loadBar() {
   const cells = Array.from(
     document.getElementById("initial-loading-bar").children
-  ).reverse();
+  );
   for (let i = 0; i < cells.length; i++) {
     if (!cells[i].classList.contains("loaded")) {
-      nextCell = cells[i];
+      cells[i].classList.add("loaded");
+      break;
     }
   }
-
-  nextCell.classList.add("loaded");
 }
