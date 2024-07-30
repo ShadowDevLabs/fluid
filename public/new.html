@@ -41,7 +41,7 @@
         <p class="search-icon">
           <span class="material-symbols-outlined lock-icon">search</span>
         </p>
-        <form id="uv-form" class="search-form">
+        <form id="uv-form" class="search-form" onsubmit="parent.Tabs.load(document.getElementById('uv-form').value)">
           <input
             type="text"
             id="uv-address"
@@ -54,7 +54,7 @@
           />
         </form>
       </div>
-      <div class="shortcuts">
+      <div class="shortcuts" style="display:none;">
         <a class="shortcut add">
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -75,7 +75,7 @@
       </div>
     </div>
 
-    <div id="shortcut-modal" class="modal">
+    <div id="shortcut-modal" class="modal" style="display:none;">
       <span class="close">&times;</span>
       <h2>Add Shortcut</h2>
       <form id="add-shortcut-form">
