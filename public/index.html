@@ -37,9 +37,13 @@
       href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
-    integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
-    crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+      integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
     <link
       rel="stylesheet"
       href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0"
@@ -127,16 +131,79 @@
     <div class="tabs-iframe" id="iframe-container"></div>
 
     <div class="context-menu" id="options-menu">
-      <div class="context-menu__item"><i class="fa-solid fa-expand fa-lg"></i> Fullscreen</div>
-      <div class="context-menu__item"><i class="fa-solid fa-expand fa-lg"></i> Fullscreen Tab</div>
-      <div class="context-menu__item"><i class="fa-solid fa-arrow-up-right-from-square fa-lg"></i>Open in Abt:Blank</div>
-      <div class="context-menu__item"><i class="fa-solid fa-arrow-up-right-from-square fa-lg"></i>Open Tab in Abt:Blank</div>
-      <div class="context-menu__item"><i class="fa-solid fa-gear fa-lg"></i> Open Settings</div>
-      <div class="context-menu__item"><i class="fa-brands fa-github fa-lg"></i> Open Github</div>
+      <div class="context-menu__item">
+        <i class="fa-solid fa-expand fa-lg"></i> Fullscreen
+      </div>
+      <div class="context-menu__item" onclick="Tabs.fullscreen()">
+        <i class="fa-solid fa-expand fa-lg"></i> Fullscreen Tab
+      </div>
+      <div class="context-menu__item" onclick="abtBlank()">
+        <i class="fa-solid fa-arrow-up-right-from-square fa-lg"></i> Open in
+        about:blank
+      </div>
+      <div class="context-menu__item" onclick="Tabs.abtBlank()">
+        <i class="fa-solid fa-arrow-up-right-from-square fa-lg"></i> Open Tab in
+        Abt:Blank
+      </div>
+      <div
+        class="context-menu__item"
+        onclick="Tabs.newTab('fluid:/\/settings')"
+      >
+        <i class="fa-solid fa-gear fa-lg"></i> Open Settings
+      </div>
+      <div
+        class="context-menu__item"
+        onclick="Tabs.newTab('https:/\/github.com/shadowdevlabs/fluid')"
+      >
+        <i class="fa-brands fa-github fa-lg"></i> Open Github
+      </div>
     </div>
 
     <script src="/assets/js/contextmenu.js"></script>
     <script>
+      function abtBlank() {
+        const url = location.href;
+        const width = window.innerWidth;
+        const height = window.innerHeight;
+
+        let inFrame;
+
+        try {
+          inFrame = window !== top;
+        } catch (e) {
+          inFrame = true;
+        }
+
+        if (!inFrame && !navigator.userAgent.includes("Firefox")) {
+          const popup = window.open(
+            "about:blank",
+            name,
+            `width=${width},height=${height}`
+          );
+
+          if (!popup || popup.closed) {
+            alert(
+              "Allow popups and redirects to hide this from showing up in your history."
+            );
+          } else {
+            const doc = popup.document;
+            const iframe = doc.createElement("iframe");
+            const style = iframe.style;
+            const link = doc.createElement("link");
+
+            iframe.src = url;
+            style.position = "fixed";
+            style.top = style.bottom = style.left = style.right = 0;
+            style.border = style.outline = "none";
+            style.width = style.height = "100%";
+
+            doc.head.appendChild(link);
+            doc.body.appendChild(iframe);
+            window.location.replace("https://google.com");
+          }
+        }
+      }
+
       window.addEventListener("message", async (event) => {
         if (event.data.key === "tabInfo") {
           const { title, favicon } = event.data.value;
