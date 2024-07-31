@@ -31,5 +31,4 @@ document.addEventListener("DOMContentLoaded", async () => {
       themeSelector.value = theme;
     } 
   }
-}); //ah ok. ima go eat some chipotle. can u handle:
-// nc - im leaving - eating chipotle, ill be afk on here
+});

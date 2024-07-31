@@ -55,21 +55,8 @@
         </form>
       </div>
       <div class="shortcuts" >
-        <a class="shortcut add">
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            xmlns:xlink="http://www.w3.org/1999/xlink"
-            viewBox="0, 0, 400,400"
-          >
-            <g id="svgg">
-              <path
-                d="M143.037 41.161 C 3.999 92.696,-5.971 287.174,127.083 352.339 C 186.443 381.411,271.324 366.663,318.993 318.993 C 443.452 194.535,307.671 -19.861,143.037 41.161 M257.465 82.787 C 336.577 123.604,353.905 229.429,291.667 291.667 C 213.477 369.857,78.892 320.123,71.796 210.417 C 65.246 109.134,169.555 37.431,257.465 82.787 M183.333 158.333 L 183.333 183.333 158.333 183.333 L 133.333 183.333 133.333 200.000 L 133.333 216.667 158.333 216.667 L 183.333 216.667 183.333 241.667 L 183.333 266.667 200.000 266.667 L 216.667 266.667 216.667 241.667 L 216.667 216.667 241.667 216.667 L 266.667 216.667 266.667 200.000 L 266.667 183.333 241.667 183.333 L 216.667 183.333 216.667 158.333 L 216.667 133.333 200.000 133.333 L 183.333 133.333 183.333 158.333 "
-                stroke="none"
-                fill="#FFFFFF"
-                fill-rule="evenodd"
-              />
-            </g>
-          </svg>
+        <a class="shortcut add" id="add-shortcut">
+            <img src="assets/img/add.png">
           <p>Add shortcut</p>
         </a>
       </div>
@@ -85,7 +72,7 @@
     <div id="shortcut-modal" class="modal" style="display:none;">
       <span class="close">&times;</span>
       <h2>Add Shortcut</h2>
-      <form id="add-shortcut-form">
+      <form id="add-shortcut-form" id="add-shortcut-form">
         <label for="shortcut-url">URL:</label>
         <input type="text" id="shortcut-url" required placeholder="Enter URL" />
         <label for="shortcut-name">Shortcut Name:</label>
@@ -95,4 +82,5 @@
   </div>
 
   </body>
+  <script src="assets/js/shortcuts.js" type="module"></script>
 </html>
