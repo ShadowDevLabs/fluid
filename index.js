@@ -4,7 +4,7 @@ import express from "express";
 import compression from "compression";
 
 const chemical = new ChemicalServer();
-const port = process.env.PORT || 3000;
+const port = process.env.PORT || 9494;
 const version = process.env.npm_package_version;
 const publicPath = fileURLToPath(new URL("./public/", import.meta.url));
 
