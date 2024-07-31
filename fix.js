@@ -1,13 +1,14 @@
 import { ChemicalServer } from "chemicaljs";
 import { fileURLToPath } from "url";
-import { join } from "path";
 import express from "express";
+import compression from "compression";
 
 const chemical = new ChemicalServer();
 const port = process.env.PORT || 3000;
 const version = process.env.npm_package_version;
 const publicPath = fileURLToPath(new URL("./public/", import.meta.url));
 
+chemical.app.use(compression());
 
 chemical.app.use(
     express.static(publicPath, {
