@@ -116,12 +116,13 @@ export class TabTracker {
     const parsedUrl = this.parseQuery(url);
     const obj = this.tabsArr[index];
     obj.iframe.src = parsedUrl;
-    obj.iframe.onload = () =>
+    obj.iframe.onload = () => {
       (obj.tab.children[0].querySelector(`.${this.config.iconClass}`).src =
         this.getFavicon(url));
     const name = obj.iframe.contentDocument.title || obj.name || "";
     obj.name = name;
-    obj.tab.children[0].querySelector("span").textContent = name;
+    obj.tab.children[0].querySelector(".tab-name").textContent = name;
+    }       
   }
 
   newTab(url, index, noSwitch, initial) {

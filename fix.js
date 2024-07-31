@@ -1,4 +1,4 @@
-import { ChemicalServer } from "chemicaljs";
+import { ChemicalServer } from "./chemical-server.js";
 import { fileURLToPath } from "url";
 import express from "express";
 import compression from "compression";
@@ -11,11 +11,12 @@ const publicPath = fileURLToPath(new URL("./public/", import.meta.url));
 chemical.app.use(compression());
 
 chemical.app.use(
-    express.static(publicPath, {
-      extensions: ["html"],
-      maxAge: 604800000,
-    })
-  );
+  express.static(publicPath, {
+    extensions: ["html"],
+    maxAge: 604800000,
+  })
+);
+
 chemical.app.get("/version", (req, res) => {
   if (req.query.v && req.query.v != version) {
     res.status(400).send(version);
@@ -53,6 +54,7 @@ chemical.app.get("/user-agents", async (req, res) => {
     $("#most-common-desktop-useragents-json-csv > div:eq(0) > textarea").val()
   );
 });
+
 
 
 chemical.listen(port, () => {
