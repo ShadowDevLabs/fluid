@@ -44,8 +44,8 @@ class ShortcutsManager {
         `;
         newShortcut.setAttribute("data-url", url);
         newShortcut.addEventListener("click", () => {
-            const shortcutUrl = newShortcut.getAttribute("data-url");
-            parent.Tabs.load(document.getElementById(shortcutUrl));
+            const url = newShortcut.getAttribute("data-url");
+            parent.Tabs.load(url);
         });
         return newShortcut;
     }
