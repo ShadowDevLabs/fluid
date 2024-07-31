@@ -12,8 +12,6 @@ Default tab object:
 }
 // */
 
-import setTransport from "./transport.js";
-
 export class TabTracker {
   constructor(config) {
     this.skip = (num) => new Array(num);
@@ -49,7 +47,7 @@ export class TabTracker {
       },
       history: true, //Weither or not history will be recorded
       searchTemplate: "https://google.com/search?q=%q%", //Default search engine (%q% is replaced with query)
-      transport: "libcurl", //Set default transport to be used, changed with TabTracker.setTransport()
+      transport: "libcurl", //Set default transport to be used, changed with chemicalTransport(transport, wispURL)
       disabledFeatures: [], //Disable features listed in features.md
     };
     this.config = { ...defaultConfig, ...config };
@@ -64,7 +62,6 @@ export class TabTracker {
     } else if (this.config.debug) console.log("Starting Tab Tracker!");
     this.activeTabIndex = 0;
     this.tabsArr = [];
-    // this.setTransport = setTransports;
     this.reload = () =>
       this.tabsArr[this.activeTabIndex].iframe.contentWindow.location.reload();
     this.forward = () =>
@@ -83,29 +80,6 @@ export class TabTracker {
         else this.load(omnibox.value);
       }
     };
-    // try {
-    //   setTransport(this.config.transport, this.config.wispUrl);
-    //   if ("serviceWorker" in navigator) {
-    //     navigator.serviceWorker
-    //       .register("/sw.js", { scope: `/${this.config.swPrefix}/` })
-    //       .then(
-    //         (registration) => {
-    //           console.log(
-    //             "Service worker registration succeeded:",
-    //             registration
-    //           );
-    //         },
-    //         (error) => {
-    //           console.error(`Service worker registration failed: ${error}`);
-    //         }
-    //       );
-    //   } else {
-    //     console.error("Service workers are not supported.");
-    //   }
-    // } catch (e) {
-    //   console.error(`Issue registering service worker: ${e}`);
-    // }
-
     this.loaded = true;
   }
 
