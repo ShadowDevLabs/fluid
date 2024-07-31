@@ -2,6 +2,7 @@ import { ChemicalServer } from "chemicaljs";
 import { fileURLToPath } from "url";
 import express from "express";
 import compression from "compression";
+import cheerio from "cheerio"
 
 const chemical = new ChemicalServer();
 const port = process.env.PORT || 8080;

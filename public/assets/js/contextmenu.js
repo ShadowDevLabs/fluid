@@ -13,7 +13,7 @@ document.addEventListener("click", (e) => {
 
   if (e.target != activeMenu || e.target.parent != activeMenu) {
   }
-}) // 
+}) 
 
 const show = (menu, pos) => {
   menu.style.left = pos.x;

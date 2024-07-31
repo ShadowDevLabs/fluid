@@ -91,12 +91,12 @@ export class TabTracker {
     const obj = this.tabsArr[index];
     obj.iframe.src = parsedUrl;
     obj.iframe.onload = () => {
-      (obj.tab.children[0].querySelector(`.${this.config.iconClass}`).src =
-        this.getFavicon(url));
-    const name = obj.iframe.contentDocument.title || obj.name || "";
-    obj.name = name;
-    obj.tab.children[0].querySelector(".tab-name").textContent = name;
-    }       
+      obj.tab.children[0].querySelector(`.${this.config.iconClass}`).src =
+        this.getFavicon(url);
+      const name = obj.iframe.contentDocument.title || obj.name || "";
+      obj.name = name;
+      obj.tab.children[0].querySelector(".tab-name").textContent = name;
+    };
   }
 
   newTab(url, index, noSwitch, initial) {
@@ -227,13 +227,12 @@ export class TabTracker {
           if (new URL(`https://${query}`).hostname.includes("."))
             return `/${this.config.swPrefix}/${
               this.proxyPrefix[this.config.proxy]
-            }/${this.encode("https://"+query)}`;
-        } catch (e) {
-          // If both above fail, fall back to the search engine template
-          return `/${this.config.swPrefix}/${
-            this.proxyPrefix[this.config.proxy]
-          }/${this.encode(this.config.searchTemplate.replace("%q%", query))}`;
-        }
+            }/${this.encode("https://" + query)}`;
+        } catch (e) {}
+        // If both above fail, fall back to the search engine template
+        return `/${this.config.swPrefix}/${
+          this.proxyPrefix[this.config.proxy]
+        }/${this.encode(this.config.searchTemplate.replace("%q%", query))}`;
       }
     }
   }
