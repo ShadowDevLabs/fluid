@@ -1,10 +1,5 @@
 let activeMenu;
 
-document.addEventListener("contextmenu", (e) => {
-  e.preventDefault();
-  if (e.target.getAttribute("data-context")) {
-  }
-});
 
 document.addEventListener("click", (e) => {
   const menu = document.getElementById("options-menu");
