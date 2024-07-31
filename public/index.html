@@ -16,7 +16,7 @@
   <link id="browser-link" href="/assets/css/default.css" rel="stylesheet" type="text/css" />
   <link href="/assets/css/global.css" rel="stylesheet" type="text/css" />
   <link href="assets/css/themes.css" rel="stylesheet" type="text/css" />
-  <link href="/favicon.ico" rel="icon" id="icon"/>
+  <link href="/favicon.ico" rel="icon" id="icon" />
   <!-- <script src="/assets/js/uv/uv.bundle.js" defer></script>
     <script src="/assets/js/uv/uv.config.js" defer></script>
     <script src="/assets/js/scram/scramjet.codecs.js"></script>
@@ -76,10 +76,10 @@
 
   <div class="bottom-bar">
     <div class="tab-controls">
-      <button class="tab-control" id="back-arrow">
+      <button class="tab-control" id="backward">
         <span class="material-symbols-outlined">arrow_back</span>
       </button>
-      <button class="tab-control" id="forward-arrow">
+      <button class="tab-control" id="forward">
         <span class="material-symbols-outlined">arrow_forward</span>
       </button>
       <button class="tab-control" id="refresh">
@@ -91,7 +91,7 @@
       <input id="search-input" placeholder="Search Google or type a URL" />
     </form>
 
-    <div class="menu-btn" id="menu-btn" onclick="openMenu();"> 
+    <div class="menu-btn" id="menu-btn" onclick="openMenu();">
       <div class="menu-dot"></div>
       <div class="menu-dot"></div>
       <div class="menu-dot"></div>
@@ -101,7 +101,7 @@
 
 
 
-  <div class="context-menu" id="options-menu"> 
+  <div class="context-menu" id="options-menu">
     <div class="context-menu__item">
       <span class="material-symbols-outlined">fullscreen</span> Fullscreen Tab
     </div>
@@ -109,26 +109,19 @@
     <div class="context-menu__item">Open Github</div>
   </div>
 
-  
+
   <script src="/assets/js/contextmenu.js"></script>
   <script>
-    window.addEventListener("message", (event) => {
-        if (event.data.key === "tabInfo") {
-            const { title, favicon } = event.data.value;
-            console.log("Received tab info:", title, favicon);
-            document.title = title;
-            document.getElementById("icon").href=favicon;
-        }
+    window.addEventListener("message", async (event) => {
+      if (event.data.key === "tabInfo") {
+        const { title, favicon } = event.data.value;
+        console.log("Setting Tab To:", title, favicon);
+        await settings.set("tab-info", event.data.value);
+        document.title = title;
+        document.getElementById("icon").href = favicon; 
+      }
     });
 
-    window.onload = () => {
-        const tabInfo = settings.get("tab-info");
-        if (tabInfo) {
-            const { title, favicon } = tabInfo;
-            document.title = title;
-            document.getElementById("icon").href = favicon;
-        }
-    };
 
     function openMenu() {
       let shown = document.getElementById("options-menu").display;

@@ -35,8 +35,9 @@ export function initTabs() {
     document
       .querySelector(".tab-add")
       .addEventListener("click", () => Tabs.newTab());
-    Tabs.instance = null;
-    delete Tabs.instance;
+      document.getElementById("refresh").onclick = Tabs.reload;
+      document.getElementById("forward").onclick = Tabs.forward;
+      document.getElementById("backward").onclick = Tabs.backward;
   } catch (e) {
     console.error(e);
   }

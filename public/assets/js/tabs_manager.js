@@ -65,16 +65,14 @@ export class TabTracker {
     this.activeTabIndex = 0;
     this.tabsArr = [];
     // this.setTransport = setTransports;
-    this.forward = (index) =>
-      this.tabsArr[
-        index || this.activeTabIndex
-      ].iframe.contentWindow.history.forward();
-    this.backward = (index) =>
-      this.tabsArr[
-        index || this.activeTabIndex
-      ].iframe.contentWindow.history.back();
+    this.reload = () =>
+      this.tabsArr[this.activeTabIndex].iframe.contentWindow.location.reload();
+    this.forward = () =>
+      this.tabsArr[this.activeTabIndex].iframe.contentWindow.history.forward();
+    this.backward = () =>
+      this.tabsArr[this.activeTabIndex].iframe.contentWindow.history.back();
     this.fullscreen = (index) =>
-      this.tabsArr[index || this.activeTabIndex].iframe.requestFullscreen();
+      this.tabsArr[this.activeTabIndex].iframe.requestFullscreen();
     this.history = this.config.history ? [] : false;
     document.getElementById(this.config.omniboxId).onkeydown = (e) => {
       if (e.key === "Enter") {
