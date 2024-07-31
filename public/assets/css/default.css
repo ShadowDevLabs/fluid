@@ -31,7 +31,7 @@ body {
   background-color: var(--secondary);
   padding: 10px;
   border-radius: 3px;
-  width: 175px;
+  width: 160px;
   margin-right: 10px;
   white-space: nowrap;
   text-overflow: ellipsis;
@@ -45,8 +45,7 @@ body {
 .tab-content {
   display: flex;
   align-items: center;
-  max-width:85%;
-  margin-right:2%; 
+  max-width:85%; 
 } 
 
 .tab-favicon {
