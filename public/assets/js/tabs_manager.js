@@ -112,6 +112,7 @@ export class TabTracker {
   load(url, index) {
     if (!url) throw Error("Missing url in load call");
     index = index || this.activeTabIndex;
+    this.tabsArr[index].url = url;
     const parsedUrl = this.parseQuery(url);
     const obj = this.tabsArr[index];
     obj.iframe.src = parsedUrl;
@@ -143,6 +144,7 @@ export class TabTracker {
       active: false,
       isInitial: initial,
     };
+
     newTab.addEventListener("click", (e) => {
       if (
         e.target.classList.contains("tab") ||

@@ -33,6 +33,9 @@ body {
   border-radius: 3px;
   width: 150px;
   margin-right: 10px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .tab.active {
@@ -54,6 +57,9 @@ body {
 .tab-name {
   font-size: 14px;
   color: var(--text);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .tab-close {
@@ -238,11 +244,14 @@ body {
 .context-menu {
   display: none;
   position: absolute;
+  top: 5rem; 
+  right: 2rem; 
   border-radius: 5px;
   background: var(--primary);
   border: 1px solid var(--accent);
   z-index: 1000;
 }
+
 
 .context-menu__item {
   padding: 10px 10px;

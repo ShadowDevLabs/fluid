@@ -22,12 +22,14 @@ window.addEventListener("message", (event) => {
 });
 
 
-window.onload = async () => {
+document.addEventListener("DOMContentLoaded", async () => {
   const theme = await settings.get("theme");
+  const themeSelector = document.getElementById("themeSelector");
   if (theme) {
     _changeTheme(theme);
     if (themeSelector) {
       themeSelector.value = theme;
-    }
+    } 
   }
-};
+}); //ah ok. ima go eat some chipotle. can u handle:
+// nc - im leaving - eating chipotle, ill be afk on here

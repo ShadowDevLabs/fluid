@@ -1,8 +1,13 @@
 import settings from "/assets/js/settings.js";
 
 const saveCloak = async () => {
-    const url = document.getElementById("cloak-url").value;
+    let url = document.getElementById("cloak-url").value;
     if (!url) return;
+
+    if (!/^https?:\/\//i.test(url)) {
+        url = 'https://' + url;
+        console.log(url)
+    }
 
     try {
         const response = await fetch(`/get-title?url=${encodeURIComponent(url)}`);
@@ -17,8 +22,14 @@ const saveCloak = async () => {
     }
 };
 
-const resetCloak = () => {
-    
+
+const resetCloak = async () => {
+    const defaultTabInfo = {
+        title:"Fluid",
+        favicon: "./favicon.ico"
+    };
+    settings.set("tab-info", defaultTabInfo);
+    window.parent.postMessage({ key: "tabInfo", value: defaultTabInfo }, "*");
 };
 
 document.addEventListener("DOMContentLoaded", () => {

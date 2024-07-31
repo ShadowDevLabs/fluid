@@ -1,4 +1,5 @@
 import { initTabs } from "/assets/js/tabs.js";
+import settings from "/assets/js/settings.js";
 
 let tips = [
   "Snails have teeth.",
@@ -28,11 +29,17 @@ let tips = [
 const interval = setInterval(update, 250);
 const tip = tips[Math.floor(Math.random() * 12)];
 
-window.onload = () => {
-  setTimeout(stopLoad, 500);
-  initTabs();
-};
-
+window.onload = async() => {
+  setTimeout(stopLoad, 500); 
+  initTabs(); 
+  const tabInfo = await settings.get("tab-info");
+  console.log(tabInfo)
+  if (tabInfo) {
+      const { title, favicon } = tabInfo;
+      document.title = title;
+      document.getElementById("icon").href = favicon;
+  }
+}; 
 function stopLoad() {
   Array.from(document.getElementById("initial-loading-bar").children).forEach(
     (element) => {
