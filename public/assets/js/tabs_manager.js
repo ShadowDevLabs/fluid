@@ -240,15 +240,17 @@ export class TabTracker {
     } else {
       try {
         // Attempt to encode the URL as-is
-        return `/${this.config.swPrefix}/${
-          this.proxyPrefix[this.config.proxy]
-        }/${this.encode(new URL(url).toString())}`;
+        if (new URL(query).hostname.includes("."))
+          return `/${this.config.swPrefix}/${
+            this.proxyPrefix[this.config.proxy]
+          }/${this.encode(query)}`;
       } catch (e) {
         // If the above fails, try with "https://" prefix
         try {
-          return `/${this.config.swPrefix}/${
-            this.proxyPrefix[this.config.proxy]
-          }/${this.encode(new URL(url, "https://").toString())}`;
+          if (new URL(`https://${query}`).hostname.includes("."))
+            return `/${this.config.swPrefix}/${
+              this.proxyPrefix[this.config.proxy]
+            }/${this.encode("https://"+query)}`;
         } catch (e) {
           // If both above fail, fall back to the search engine template
           return `/${this.config.swPrefix}/${
